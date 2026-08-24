@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, HelpCircle, Layers, CheckCircle, Brain, RefreshCw, ChevronLeft, ChevronRight, Check, Calendar } from 'lucide-react';
+import { BookOpen, HelpCircle, Layers, CheckCircle, Brain, RefreshCw, ChevronLeft, ChevronRight, Check, Calendar, ExternalLink, Headphones } from 'lucide-react';
+import { LISTENING_TASKS, UPGRADED_READINGS } from './selin-levelled-content';
 
 const VOCAB_DAY_1 = [
   { word: "Hello, I don't think we've met.", engDesc: "A polite way to introduce yourself to someone new.", engExample: "Hello, I don't think we've met. My name is Arthur.", trWord: "Merhaba, sanırım tanışmadık.", trDesc: "Yeni biriyle tanışmak için kibar bir yol.", trExample: "Merhaba, sanırım tanışmadık. Benim adım Arthur." },
@@ -358,7 +359,11 @@ export default function App() {
     cumulativeVocab.push(...CURRICULUM[i].vocab);
   }
 
-  const dayData = CURRICULUM[currentDay];
+  const dayData = {
+    ...CURRICULUM[currentDay],
+    readings: UPGRADED_READINGS[currentDay],
+    listening: LISTENING_TASKS[currentDay],
+  };
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -370,6 +375,8 @@ export default function App() {
         return <QuizEngine title={`Day ${currentDay} Vocab Exercises`} questions={dayData.vocabExercises} />;
       case 'reading':
         return <ReadingSection readings={dayData.readings} />;
+      case 'listening':
+        return <ListeningSection task={dayData.listening} />;
       case 'test':
         return <QuizEngine title={`Day ${currentDay} Final Test`} questions={dayData.test} />;
       default:
@@ -418,6 +425,7 @@ export default function App() {
           <TabButton id="flashcards" label="Flashcards" icon={<Layers className="w-4 h-4" />} activeTab={activeTab} setActiveTab={setActiveTab} />
           <TabButton id="vocab-exercises" label="Vocab Exercises" icon={<HelpCircle className="w-4 h-4" />} activeTab={activeTab} setActiveTab={setActiveTab} />
           <TabButton id="reading" label="Reading" icon={<BookOpen className="w-4 h-4" />} activeTab={activeTab} setActiveTab={setActiveTab} />
+          <TabButton id="listening" label="Listening" icon={<Headphones className="w-4 h-4" />} activeTab={activeTab} setActiveTab={setActiveTab} />
           <TabButton id="test" label="Final Test" icon={<CheckCircle className="w-4 h-4" />} activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       </nav>
@@ -609,7 +617,7 @@ function ReadingSection({ readings }) {
               Text {idx + 1}: {text.title}
             </h3>
           </div>
-          <div className="p-6 md:p-8 text-slate-700 text-lg leading-relaxed border-b border-slate-100 bg-white">
+          <div className="p-6 md:p-8 text-slate-700 text-lg leading-relaxed border-b border-slate-100 bg-white whitespace-pre-line">
             {formatText(text.content, text.highlightedWords)}
           </div>
           <div className="bg-slate-50 p-6 md:p-8">
@@ -861,6 +869,37 @@ function QuizEngine({ title, questions, hideTitleBorder = false, isSubQuiz = fal
             </button>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+function ListeningSection({ task }) {
+  return (
+    <div className="space-y-8 animate-in fade-in duration-500">
+      <div className="text-center">
+        <div className="mx-auto mb-4 w-14 h-14 rounded-2xl bg-violet-100 text-violet-700 flex items-center justify-center">
+          <Headphones className="w-7 h-7" />
+        </div>
+        <span className="inline-flex px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wide">{task.level}</span>
+        <h2 className="text-3xl font-bold text-slate-800 mt-3">{task.title}</h2>
+        <p className="text-slate-500 mt-2">{task.instructions}</p>
+      </div>
+
+      <div className="bg-gradient-to-br from-violet-50 to-blue-50 border border-violet-200 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6">
+        <div className="flex-1">
+          <p className="text-xs font-bold uppercase tracking-wider text-violet-700">{task.source}</p>
+          <h3 className="text-xl font-bold text-slate-800 mt-1">Focus: {task.focus}</h3>
+          <p className="text-slate-600 mt-3">Listen twice, then return here to complete the questions.</p>
+        </div>
+        <a href={task.url} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-violet-700 text-white font-bold hover:bg-violet-800 transition-colors shadow-md">
+          Open listening <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
+
+      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8">
+        <h3 className="text-xl font-bold text-slate-800 mb-4">Listening Check</h3>
+        <QuizEngine title="" questions={task.questions} isSubQuiz={true} />
       </div>
     </div>
   );
