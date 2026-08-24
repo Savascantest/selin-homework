@@ -1,0 +1,13 @@
+{
+  "student": "Selin",
+  "defaultLessonId": "2026-08-23-3E8D67CF",
+  "lessons": [
+    {
+      "id": "2026-08-23-3E8D67CF",
+      "date": "2026-08-23",
+      "title": "First Impressions & Better Conversations",
+      "meetingUuid": "3E8D67CF-EB08-44AE-8CAA-836B229B64EB",
+      "component": "src/homeworks/2026-08-23-3E8D67CF.jsx"
+    }
+  ]
+}
