@@ -1,0 +1,287 @@
+{
+  "id": "2026-08-29-E9573073",
+  "student": "Selin",
+  "date": "2026-08-29",
+  "dateLabel": "29 Aug 2026",
+  "meetingUuid": "E9573073-2D66-49A3-93A2-E3B20E8629D9",
+  "title": "Connections, Events & Clear Prepositions",
+  "subtitle": "Fresh practice on articles, time phrases, verb–preposition partnerships and confident longer reading.",
+  "teacherNote": {
+    "detected": true,
+    "applied": true,
+    "summary": "Completely renewed lesson content; three continued grammar areas; focused verb–preposition set; all readings, questions and listening replaced."
+  },
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Lesson Notes",
+      "title": "What we discussed",
+      "intro": "The lesson moved through family celebrations, work, projects, travel and unusual stories. The language focus is making these experiences clear and connected.",
+      "cards": [
+        {
+          "title": "Accuracy in small words",
+          "text": "Articles, plural endings and prepositions often carry the relationship between the main ideas."
+        },
+        {
+          "title": "Useful partnerships",
+          "text": "Learn the verb and its preposition together as one phrase."
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "label": "Grammar",
+      "title": "Articles, time phrases and verb partnerships",
+      "intro": "Dilbilgisi açıklamaları Türkçedir; örnekler İngilizcedir.",
+      "cards": [
+        {
+          "title": "a/an ve çoğul",
+          "text": "Tekil sayılabilir isim ilk kez söyleniyorsa a/an kullanılır. Sayı ikiden büyükse isim çoğul olur.",
+          "examples": [
+            "It was a busy week.",
+            "She bought two dresses."
+          ]
+        },
+        {
+          "title": "in / on / at",
+          "text": "Mevsim ve uzun dönemlerde in, gün/tarihte on, kesin saatte at kullanılır.",
+          "examples": [
+            "in summer",
+            "on Saturday",
+            "at six o’clock"
+          ]
+        },
+        {
+          "title": "Fiil + edat",
+          "text": "Bu grupları birlikte öğren: listen to, look at, come up to, go out with, wait for, spend time on, talk to/with somebody.",
+          "examples": [
+            "I waited for my cousin.",
+            "We talked to the project manager."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "label": "Practice",
+      "title": "Choose the natural sentence",
+      "questions": [
+        {
+          "q": "Choose the correct sentence.",
+          "opt": [
+            "It was busy week.",
+            "It was a busy week.",
+            "It was an busy week."
+          ],
+          "a": "It was a busy week."
+        },
+        {
+          "q": "We travelled ___ summer.",
+          "opt": [
+            "in",
+            "on",
+            "at"
+          ],
+          "a": "in"
+        },
+        {
+          "q": "She bought two ___.",
+          "opt": [
+            "dress",
+            "dresses",
+            "dresss"
+          ],
+          "a": "dresses"
+        },
+        {
+          "q": "Please listen ___ the message.",
+          "opt": [
+            "to",
+            "at",
+            "for"
+          ],
+          "a": "to"
+        },
+        {
+          "q": "I spent two hours ___ the project.",
+          "opt": [
+            "on",
+            "to",
+            "with"
+          ],
+          "a": "on"
+        },
+        {
+          "q": "He came up ___ me after the event.",
+          "opt": [
+            "to",
+            "for",
+            "at"
+          ],
+          "a": "to"
+        },
+        {
+          "q": "We are waiting ___ the bus.",
+          "opt": [
+            "for",
+            "on",
+            "to"
+          ],
+          "a": "for"
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "label": "Reading",
+      "title": "Extended reading",
+      "readings": [
+        {
+          "level": "A2+/early B1",
+          "title": "A Weekend of Plans",
+          "text": "Selin had expected a quiet weekend, but several plans appeared at once. On Friday evening, she went out with a friend who was preparing for a family celebration. They looked at photographs of different dresses and talked to the shop assistant about colours, sizes and delivery dates. Selin’s friend did not want to buy something she would wear only once, so she chose a simple dress that could be used again.\n\nOn Saturday morning, Selin spent time on a clinic project. The team had recently lost one member, and everyone needed to reorganise the work. Selin listened to the project manager, wrote down the new responsibilities and waited for two colleagues to send important files. Although the situation was stressful, the meeting became more positive when everyone offered a practical solution.\n\nThat evening, Selin visited relatives and heard stories about weddings, travel and surprising family traditions. One cousin described an old house that people believed was haunted. Selin did not completely believe the story, but she enjoyed the atmosphere and asked several questions. On Sunday she finally had time to rest. Looking back, she realised that a busy weekend can still feel meaningful when work, friendship and family are balanced.",
+          "questions": [
+            {
+              "q": "Why did the friend choose a simple dress?",
+              "opt": [
+                "She could wear it again.",
+                "It was the only colour.",
+                "The event was cancelled."
+              ],
+              "a": "She could wear it again."
+            },
+            {
+              "q": "What problem did the clinic team have?",
+              "opt": [
+                "A team member had left.",
+                "The clinic was closed.",
+                "Nobody had files."
+              ],
+              "a": "A team member had left."
+            },
+            {
+              "q": "What did Selin do in the meeting?",
+              "opt": [
+                "She noted new responsibilities.",
+                "She bought a dress.",
+                "She told a ghost story."
+              ],
+              "a": "She noted new responsibilities."
+            },
+            {
+              "q": "How did Selin feel about the old-house story?",
+              "opt": [
+                "Interested but not fully convinced",
+                "Completely certain",
+                "Angry"
+              ],
+              "a": "Interested but not fully convinced"
+            },
+            {
+              "q": "What is the main message?",
+              "opt": [
+                "Balance can make a busy weekend meaningful.",
+                "Work should always be avoided.",
+                "Family events are simple."
+              ],
+              "a": "Balance can make a busy weekend meaningful."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "listening",
+      "label": "Listening",
+      "title": "Plans and arrangements",
+      "intro": "A level-appropriate external task connected to plans and social arrangements.",
+      "external": {
+        "title": "Making Plans",
+        "level": "A2",
+        "url": "https://learnenglish.britishcouncil.org/skills/listening/a2-listening/making-plans",
+        "instructions": "Listen twice. First identify the plan; then note when, where and why it changes."
+      },
+      "questions": [
+        {
+          "q": "First-listen goal?",
+          "opt": [
+            "Identify the main plan",
+            "Translate every word",
+            "Skip the audio"
+          ],
+          "a": "Identify the main plan"
+        },
+        {
+          "q": "Which details matter on listen two?",
+          "opt": [
+            "When and where",
+            "Only names",
+            "Only spelling"
+          ],
+          "a": "When and where"
+        },
+        {
+          "q": "What language should you notice?",
+          "opt": [
+            "Suggestions and arrangements",
+            "Possessive nouns only",
+            "Past habits only"
+          ],
+          "a": "Suggestions and arrangements"
+        }
+      ]
+    },
+    {
+      "id": "quiz",
+      "label": "Final Quiz",
+      "title": "Final check",
+      "questions": [
+        {
+          "q": "We talked ___ the manager.",
+          "opt": [
+            "to",
+            "on",
+            "for"
+          ],
+          "a": "to"
+        },
+        {
+          "q": "Choose the correct phrase.",
+          "opt": [
+            "in summer",
+            "on summer",
+            "at summer"
+          ],
+          "a": "in summer"
+        },
+        {
+          "q": "Choose the correct plural.",
+          "opt": [
+            "two dresses",
+            "two dress",
+            "two dress’s"
+          ],
+          "a": "two dresses"
+        },
+        {
+          "q": "I waited ___ my friend.",
+          "opt": [
+            "for",
+            "to",
+            "at"
+          ],
+          "a": "for"
+        },
+        {
+          "q": "She spent time ___ the report.",
+          "opt": [
+            "on",
+            "for",
+            "at"
+          ],
+          "a": "on"
+        }
+      ]
+    }
+  ]
+}

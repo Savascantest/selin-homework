@@ -1,13 +1,18 @@
 {
-  "student": "Selin",
-  "defaultLessonId": "2026-08-23-3E8D67CF",
   "lessons": [
     {
+      "title": "Connections, Events & Clear Prepositions",
+      "path": "homeworks/2026-08-29-E9573073/homework.json",
+      "dateLabel": "29 Aug 2026",
+      "id": "2026-08-29-E9573073",
+      "date": "2026-08-29"
+    },
+    {
+      "title": "Selin Homework",
+      "path": "homeworks/2026-08-23-3E8D67CF/homework.json",
+      "dateLabel": "23 Aug 2026",
       "id": "2026-08-23-3E8D67CF",
-      "date": "2026-08-23",
-      "title": "First Impressions & Better Conversations",
-      "meetingUuid": "3E8D67CF-EB08-44AE-8CAA-836B229B64EB",
-      "component": "src/homeworks/2026-08-23-3E8D67CF.jsx"
+      "date": "2026-08-23"
     }
   ]
 }
