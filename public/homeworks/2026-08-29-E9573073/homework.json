@@ -9,7 +9,7 @@
   "teacherNote": {
     "detected": true,
     "applied": true,
-    "summary": "Completely renewed lesson content; three continued grammar areas; focused verb–preposition set; all readings, questions and listening replaced."
+    "summary": "Revised to the original four-day structure: Days 1–3 use 15-question mixed review without repeated explanations; Day 4 alone explains the new verb–preposition rules. Fictional names are used throughout learning material."
   },
   "sections": [
     {
@@ -139,7 +139,7 @@
         {
           "level": "A2+/early B1",
           "title": "A Weekend of Plans",
-          "text": "Selin had expected a quiet weekend, but several plans appeared at once. On Friday evening, she went out with a friend who was preparing for a family celebration. They looked at photographs of different dresses and talked to the shop assistant about colours, sizes and delivery dates. Selin’s friend did not want to buy something she would wear only once, so she chose a simple dress that could be used again.\n\nOn Saturday morning, Selin spent time on a clinic project. The team had recently lost one member, and everyone needed to reorganise the work. Selin listened to the project manager, wrote down the new responsibilities and waited for two colleagues to send important files. Although the situation was stressful, the meeting became more positive when everyone offered a practical solution.\n\nThat evening, Selin visited relatives and heard stories about weddings, travel and surprising family traditions. One cousin described an old house that people believed was haunted. Selin did not completely believe the story, but she enjoyed the atmosphere and asked several questions. On Sunday she finally had time to rest. Looking back, she realised that a busy weekend can still feel meaningful when work, friendship and family are balanced.",
+          "text": "Derya had expected a quiet weekend, but several plans appeared at once. On Friday evening, she went out with a friend who was preparing for a family celebration. They looked at photographs of different dresses and talked to the shop assistant about colours, sizes and delivery dates. Derya’s friend did not want to buy something she would wear only once, so she chose a simple dress that could be used again.\n\nOn Saturday morning, Derya spent time on a clinic project. The team had recently lost one member, and everyone needed to reorganise the work. Derya listened to the project manager, wrote down the new responsibilities and waited for two colleagues to send important files. Although the situation was stressful, the meeting became more positive when everyone offered a practical solution.\n\nThat evening, Derya visited relatives and heard stories about weddings, travel and surprising family traditions. One cousin described an old house that people believed was haunted. Derya did not completely believe the story, but she enjoyed the atmosphere and asked several questions. On Sunday she finally had time to rest. Looking back, she realised that a busy weekend can still feel meaningful when work, friendship and family are balanced.",
           "questions": [
             {
               "q": "Why did the friend choose a simple dress?",
@@ -160,7 +160,7 @@
               "a": "A team member had left."
             },
             {
-              "q": "What did Selin do in the meeting?",
+              "q": "What did Derya do in the meeting?",
               "opt": [
                 "She noted new responsibilities.",
                 "She bought a dress.",
@@ -169,7 +169,7 @@
               "a": "She noted new responsibilities."
             },
             {
-              "q": "How did Selin feel about the old-house story?",
+              "q": "How did Derya feel about the old-house story?",
               "opt": [
                 "Interested but not fully convinced",
                 "Completely certain",
@@ -285,3 +285,4 @@
     }
   ]
 }
+

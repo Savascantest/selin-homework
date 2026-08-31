@@ -174,17 +174,17 @@ The conversation changes the group. Nora begins asking for opinions before makin
     {
       id: 'd4-r1',
       title: 'Remembering More Than a Name',
-      content: `At a professional event, Selin meets dozens of people in one evening. She is usually good at starting conversations, but remembering every name is difficult. When she meets someone for the second time, she sometimes says, “I’m sorry, I’m so bad with names. What’s your name again?” Most people respond kindly because the question is honest and polite.
+      content: `At a professional event, Derya meets dozens of people in one evening. She is usually good at starting conversations, but remembering every name is difficult. When she meets someone for the second time, she sometimes says, “I’m sorry, I’m so bad with names. What’s your name again?” Most people respond kindly because the question is honest and polite.
 
-Selin begins using a simple strategy. After each introduction, she repeats the person’s name and connects it to one detail from the conversation. She remembers “Marta—mountain hiking” and “Kerem—children’s books.” Later, these details help her continue the conversation instead of asking only general questions.
+Derya begins using a simple strategy. After each introduction, she repeats the person’s name and connects it to one detail from the conversation. She remembers “Marta—mountain hiking” and “Kerem—children’s books.” Later, these details help her continue the conversation instead of asking only general questions.
 
-Near the end of the event, Selin recognizes a woman she met earlier. “This must be Leyla, the architect who loves old buildings,” she thinks. She is correct. Leyla is impressed that Selin remembers both her name and her interest. Their second conversation feels warmer and more natural. Selin realizes that remembering a personal detail shows genuine attention; it is more meaningful than simply remembering a name.`,
+Near the end of the event, Derya recognizes a woman she met earlier. “This must be Leyla, the architect who loves old buildings,” she thinks. She is correct. Leyla is impressed that Derya remembers both her name and her interest. Their second conversation feels warmer and more natural. Derya realizes that remembering a personal detail shows genuine attention; it is more meaningful than simply remembering a name.`,
       highlightedWords: ['I’m so bad with names', 'What’s your name again?', 'honest', 'This must be', 'genuine attention'],
       questions: [
-        { type: 'mcq', question: 'Why do people usually react kindly when Selin forgets a name?', options: ['She changes the subject.', 'Her question is honest and polite.', 'They have also forgotten her.', 'She leaves immediately.'], answer: 1 },
-        { type: 'mcq', question: 'What is Selin’s memory strategy?', options: ['Write every name on her hand.', 'Connect each name with a personal detail.', 'Avoid second conversations.', 'Use only general questions.'], answer: 1 },
-        { type: 'mcq', question: 'Why is Leyla impressed?', options: ['Selin knows her employer.', 'Selin remembers her name and interest.', 'Selin is an architect.', 'Selin brings her a book.'], answer: 1 },
-        { type: 'tf', question: 'True or False: Selin believes remembering details can show real attention.', options: ['True', 'False'], answer: 0 },
+        { type: 'mcq', question: 'Why do people usually react kindly when Derya forgets a name?', options: ['She changes the subject.', 'Her question is honest and polite.', 'They have also forgotten her.', 'She leaves immediately.'], answer: 1 },
+        { type: 'mcq', question: 'What is Derya’s memory strategy?', options: ['Write every name on her hand.', 'Connect each name with a personal detail.', 'Avoid second conversations.', 'Use only general questions.'], answer: 1 },
+        { type: 'mcq', question: 'Why is Leyla impressed?', options: ['Derya knows her employer.', 'Derya remembers her name and interest.', 'Derya is an architect.', 'Derya brings her a book.'], answer: 1 },
+        { type: 'tf', question: 'True or False: Derya believes remembering details can show real attention.', options: ['True', 'False'], answer: 0 },
         { type: 'mcq', question: 'What does “This must be Leyla” express?', options: ['A request', 'A confident deduction', 'A past habit', 'A dislike'], answer: 1 }
       ]
     },
