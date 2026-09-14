@@ -1,5 +1,18 @@
 import { LISTENING_TASKS, UPGRADED_READINGS } from '../src/homeworks/selin-levelled-content.js';
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { assertPublicPackagePrivacy } from './lib/public-package-privacy.mjs';
+import { collectSelinArchitectureV1PackageErrors } from './lib/architecture-v1-package.mjs';
+
+async function findHomeworkPackages(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const nested = await Promise.all(entries.map(async entry => {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) return findHomeworkPackages(path);
+    return entry.isFile() && entry.name === 'homework.json' ? [path] : [];
+  }));
+  return nested.flat();
+}
 
 const errors = [];
 for (const day of [1, 2, 3, 4]) {
@@ -21,7 +34,12 @@ if (errors.length) {
   process.exit(1);
 }
 console.log('Validated all four days: listening and A2+/early-B1 reading content is complete.');
-const current=JSON.parse(await (await import('node:fs/promises')).readFile('public/homeworks/2026-08-29-E9573073/homework.json','utf8'));
+for (const packagePath of await findHomeworkPackages('public/homeworks')) {
+  const publicPackage = JSON.parse(await readFile(packagePath, 'utf8'));
+  assertPublicPackagePrivacy(publicPackage, packagePath);
+  for (const error of collectSelinArchitectureV1PackageErrors(publicPackage)) errors.push(`${packagePath}: ${error}`);
+}
+const current=JSON.parse(await readFile('public/homeworks/2026-08-29-E9573073/homework.json','utf8'));
 assertPublicPackagePrivacy(current, 'Current Selin public package');
 for(const id of['notes','grammar','practice','reading','listening','quiz'])if(!current.sections.some(x=>x.id===id))throw new Error(`Current ${id} tab is missing`);
 console.log('Validated the current dated package, all current tabs, and its public privacy boundary.');
