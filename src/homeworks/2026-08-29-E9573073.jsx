@@ -450,20 +450,20 @@ const CURRENT_CURRICULUM = {
   }
 };
 
-export default function App() {
+export function LessonShell({ curriculum = CURRENT_CURRICULUM, readings = UPGRADED_READINGS, listening = LISTENING_TASKS, lessonLabel = 'Mixed review first · New rules on Day 4' }) {
   const [currentDay, setCurrentDay] = useState(1);
   const [activeTab, setActiveTab] = useState('grammar');
 
   // Compute cumulative vocabulary up to currentDay
   const cumulativeVocab = [];
   for (let i = 1; i <= currentDay; i++) {
-    cumulativeVocab.push(...CURRENT_CURRICULUM[i].vocab);
+    cumulativeVocab.push(...curriculum[i].vocab);
   }
 
   const dayData = {
-    ...CURRENT_CURRICULUM[currentDay],
-    readings: UPGRADED_READINGS[currentDay],
-    listening: LISTENING_TASKS[currentDay],
+    ...curriculum[currentDay],
+    readings: readings[currentDay],
+    listening: listening[currentDay],
   };
 
   const renderTabContent = () => {
@@ -494,7 +494,7 @@ export default function App() {
               <Brain className="w-8 h-8 text-blue-200" />
               <h1 className="text-2xl font-bold tracking-tight">Four-Day English Review</h1>
             </div>
-            <p className="text-blue-100 text-sm md:text-base font-medium">Mixed review first · New rules on Day 4</p>
+            <p className="text-blue-100 text-sm md:text-base font-medium">{lessonLabel}</p>
           </div>
           
           {/* Day Selector */}
@@ -538,6 +538,10 @@ export default function App() {
       </main>
     </div>
   );
+}
+
+export default function App() {
+  return <LessonShell />;
 }
 
 function TabButton({ id, label, icon, activeTab, setActiveTab }) {
@@ -584,6 +588,23 @@ function GrammarSection({ grammarData, exercises }) {
           ))}
         </div>
       )}
+
+      {grammarData.tables?.map((table) => (
+        <div key={table.title} className="overflow-x-auto rounded-2xl border border-blue-100 bg-blue-50/40 shadow-sm">
+          <h3 className="px-5 pt-5 text-xl font-bold text-blue-900">{table.title}</h3>
+          {table.intro && <p className="px-5 pt-2 text-slate-600">{table.intro}</p>}
+          <table className="mt-4 w-full min-w-[34rem] text-left text-sm sm:text-base">
+            <thead className="bg-blue-100 text-blue-950">
+              <tr>{table.columns.map((column) => <th key={column} className="px-5 py-3 font-bold">{column}</th>)}</tr>
+            </thead>
+            <tbody className="divide-y divide-blue-100 bg-white">
+              {table.rows.map((row, index) => (
+                <tr key={`${table.title}-${index}`}>{row.map((cell) => <td key={cell} className="px-5 py-3 text-slate-700">{cell}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
 
       <div className="pt-8 border-t border-slate-200 mt-12">
         <QuizEngine title="Grammar Practice" questions={exercises} hideTitleBorder={true} />

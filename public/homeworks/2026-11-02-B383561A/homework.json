@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-02-B383561A",
+  "date": "2026-11-02",
+  "dateLabel": "2 Nov 2026",
+  "title": "Cumulative English Review: Everyday Life to Life Stories",
+  "subtitle": "Four days of retrieval practice, levelled reading and listening, followed by new past-time patterns.",
+  "lessonNotes": "Days 1–3 revisit familiar material through mixed practice. Day 4 introduces among and grouped past-simple verb families.",
+  "policyVersion": "selin-four-day-retrieval-and-progression@1",
+  "templateContractVersion": "selin-four-day-interactive@1",
+  "assessmentPolicyVersion": "selin-section-and-daily-checks@1",
+  "sections": [
+    {
+      "id": "day-1",
+      "label": "Day 1",
+      "title": "Personal Information and Daily Routines",
+      "description": "Familiar retrieval practice with forms, occupations, present simple, possessives, articles and adverbs of frequency.",
+      "questionCount": 15,
+      "readingLevel": "A2+/early B1",
+      "listeningTitle": "My Day"
+    },
+    {
+      "id": "day-2",
+      "label": "Day 2",
+      "title": "Home, Place and Free-Time Choices",
+      "description": "Familiar retrieval practice with rooms, furniture, there is/are, demonstratives, place phrases and interests.",
+      "questionCount": 15,
+      "readingLevel": "A2+/early B1",
+      "listeningTitle": "Meg's Place"
+    },
+    {
+      "id": "day-3",
+      "label": "Day 3",
+      "title": "Food, Restaurants and Quantities",
+      "description": "Familiar retrieval practice with food, restaurant language, determiners and quantifiers.",
+      "questionCount": 15,
+      "readingLevel": "A2+/early B1",
+      "listeningTitle": "Ordering in a Café"
+    },
+    {
+      "id": "day-4",
+      "label": "Day 4",
+      "title": "Among and Past-Simple Families",
+      "description": "New-topic practice with between/among, regular past forms and logically grouped irregular verb pairs.",
+      "questionCount": 15,
+      "readingLevel": "A2+/early B1",
+      "listeningTitle": "Life History"
+    }
+  ]
+}

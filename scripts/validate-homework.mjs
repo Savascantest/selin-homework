@@ -1,4 +1,5 @@
 import { LISTENING_TASKS, UPGRADED_READINGS } from '../src/homeworks/selin-levelled-content.js';
+import { NOVEMBER_CURRICULUM, NOVEMBER_LISTENING, NOVEMBER_READINGS } from '../src/homeworks/selin-2026-11-02-content.js';
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { assertPublicPackagePrivacy } from './lib/public-package-privacy.mjs';
@@ -15,19 +16,31 @@ async function findHomeworkPackages(directory) {
 }
 
 const errors = [];
-for (const day of [1, 2, 3, 4]) {
-  const listening = LISTENING_TASKS[day];
-  if (!listening?.url?.startsWith('https://')) errors.push(`Day ${day}: listening URL is missing`);
-  if ((listening?.questions?.length || 0) < 5) errors.push(`Day ${day}: listening needs at least five questions`);
+function validateAnswerBalance(label, questions) {
+  const indexed = questions.filter(question => question.options?.length === 4 && Number.isInteger(question.answer));
+  if (indexed.length < 5) return;
+  const counts = [0, 1, 2, 3].map(position => indexed.filter(question => question.answer === position).length);
+  if (Math.max(...counts) - Math.min(...counts) > 2) errors.push(`${label}: answer positions are unbalanced (${counts.join('/')})`);
+}
+function validateLevelledContent(label, listeningSet, readingSet) {
+  for (const day of [1, 2, 3, 4]) {
+    const listening = listeningSet[day];
+    if (!listening?.url?.startsWith('https://')) errors.push(`${label} Day ${day}: listening URL is missing`);
+    if ((listening?.questions?.length || 0) < 5) errors.push(`${label} Day ${day}: listening needs at least five questions`);
+    if (label === '2 Nov') validateAnswerBalance(`${label} Day ${day} listening`, listening?.questions || []);
 
-  const readings = UPGRADED_READINGS[day];
-  if ((readings?.length || 0) < 2) errors.push(`Day ${day}: two reading texts are required`);
-  for (const reading of readings || []) {
-    const wordCount = reading.content.trim().split(/\s+/).length;
-    if (wordCount < 150) errors.push(`Day ${day} / ${reading.title}: reading is only ${wordCount} words`);
-    if ((reading.questions?.length || 0) < 5) errors.push(`Day ${day} / ${reading.title}: five questions are required`);
+    const readings = readingSet[day];
+    if ((readings?.length || 0) < 2) errors.push(`${label} Day ${day}: two reading texts are required`);
+    for (const reading of readings || []) {
+      const wordCount = reading.content.trim().split(/\s+/).length;
+      if (wordCount < 150) errors.push(`${label} Day ${day} / ${reading.title}: reading is only ${wordCount} words`);
+      if ((reading.questions?.length || 0) < 5) errors.push(`${label} Day ${day} / ${reading.title}: five questions are required`);
+      if (label === '2 Nov') validateAnswerBalance(`${label} Day ${day} / ${reading.title}`, reading.questions || []);
+    }
   }
 }
+validateLevelledContent('29 Aug', LISTENING_TASKS, UPGRADED_READINGS);
+validateLevelledContent('2 Nov', NOVEMBER_LISTENING, NOVEMBER_READINGS);
 
 if (errors.length) {
   console.error(`Selin homework validation failed:\n- ${errors.join('\n- ')}`);
@@ -39,20 +52,20 @@ for (const packagePath of await findHomeworkPackages('public/homeworks')) {
   assertPublicPackagePrivacy(publicPackage, packagePath);
   for (const error of collectSelinArchitectureV1PackageErrors(publicPackage)) errors.push(`${packagePath}: ${error}`);
 }
-const current=JSON.parse(await readFile('public/homeworks/2026-08-29-E9573073/homework.json','utf8'));
+const current=JSON.parse(await readFile('public/homeworks/2026-11-02-B383561A/homework.json','utf8'));
 assertPublicPackagePrivacy(current, 'Current Selin public package');
-for(const id of['notes','grammar','practice','reading','listening','quiz'])if(!current.sections.some(x=>x.id===id))throw new Error(`Current ${id} tab is missing`);
-console.log('Validated the current dated package, all current tabs, and its public privacy boundary.');
-const currentComponent=await (await import('node:fs/promises')).readFile('src/homeworks/2026-08-29-E9573073.jsx','utf8');
+for(const id of['day-1','day-2','day-3','day-4'])if(!current.sections.some(x=>x.id===id))throw new Error(`Current ${id} package section is missing`);
+console.log('Validated the current dated package, all four days, and its public privacy boundary.');
 for(const day of [1,2,3,4]){
-  const start=currentComponent.indexOf(`${day}: {`,currentComponent.indexOf('const CURRENT_CURRICULUM'));
-  const end=day<4?currentComponent.indexOf(`${day+1}: {`,start):currentComponent.indexOf('\n};',start);
-  const block=currentComponent.slice(start,end);
-  const count=(block.match(/^      \['/gm)||[]).length;
-  if(count!==15)errors.push(`Current Day ${day}: expected 15 mixed exercises, found ${count}`);
-  if(day<4&&(!block.includes('rules: []')||block.includes("label: '")))errors.push(`Current Day ${day}: repeated grammar explanation found`);
-  if(day===4&&!block.includes('New Rule: Learn the Whole Phrase'))errors.push('Current Day 4: new-rule explanation is missing');
+  const dayData=NOVEMBER_CURRICULUM[day];
+  if(dayData.grammarExercises.length!==15)errors.push(`Current Day ${day}: expected 15 mixed exercises, found ${dayData.grammarExercises.length}`);
+  validateAnswerBalance(`Current Day ${day} grammar`,dayData.grammarExercises);
+  validateAnswerBalance(`Current Day ${day} vocabulary`,dayData.vocabExercises);
+  validateAnswerBalance(`Current Day ${day} final test`,dayData.test);
+  if(day<4&&dayData.grammar.rules.length)errors.push(`Current Day ${day}: repeated grammar explanation found`);
+  if(day===4&&(!dayData.grammar.rules.length||!dayData.grammar.tables?.length))errors.push('Current Day 4: new-rule explanation or verb-family table is missing');
+  if(current.sections.find(section=>section.id===`day-${day}`)?.questionCount!==15)errors.push(`Current Day ${day}: public package question count is not 15`);
 }
-if(/\bSelin\b/.test(currentComponent))errors.push('Student name appears inside current learning material');
+if(/\bSelin\b/.test(JSON.stringify({NOVEMBER_CURRICULUM,NOVEMBER_LISTENING,NOVEMBER_READINGS})))errors.push('Student name appears inside current learning material');
 if(errors.length){console.error(`Current revision validation failed:\n- ${errors.join('\n- ')}`);process.exit(1)}
 console.log('Validated four current days, 15 exercises per day, review-only Days 1–3, and new rules only on Day 4.');

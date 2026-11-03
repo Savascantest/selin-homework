@@ -32,7 +32,7 @@ test('private lesson, router, receipt, planning, and source references are rejec
   }
 });
 
-test('the repaired current Selin package is public-safe', async () => {
-  const current = JSON.parse(await readFile(new URL('../public/homeworks/2026-08-29-E9573073/homework.json', import.meta.url), 'utf8'));
+test('the current dated package is public-safe', async () => {
+  const current = JSON.parse(await readFile(new URL('../public/homeworks/2026-11-02-B383561A/homework.json', import.meta.url), 'utf8'));
   assert.deepEqual(findPublicPackagePrivacyViolations(current), []);
 });
