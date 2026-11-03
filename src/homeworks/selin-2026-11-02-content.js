@@ -218,57 +218,29 @@ export const NOVEMBER_CURRICULUM = {
     ]
   },
   4: {
-    title: 'Day 4: New Rules — Among & Past-Simple Families',
+    title: 'Day 4: Short Cumulative Grammar Review',
     vocab: DAY_4_VOCAB,
     grammar: {
-      title: 'New Rules: Place and Past-Time Patterns',
-      desc: 'Bugünün yeni konuları among kullanımı ve geçmiş zaman fiillerini mantıklı ses/değişim aileleriyle öğrenmektir. Örnekler İngilizcedir.',
-      rules: [
-        { label: 'between / among', text: 'Between çoğunlukla iki kişi veya şey arasındaki ilişkiyi; among ise üç ya da daha fazla kişi veya şeyin oluşturduğu grubun içini anlatır.', example: 'The café is between the bank and the station. A small cottage stands among the trees.' },
-        { label: 'Regular past: verb + -ed', text: 'Düzenli fiiller geçmişte çoğunlukla -ed alır. Yazım değişikliklerini de fiille birlikte öğren: live → lived, study → studied, stop → stopped.', example: 'Nora studied history and worked in a museum.' },
-        { label: 'Irregular verbs as families', text: 'Düzensiz fiilleri alfabetik ezberlemek yerine benzer değişim gösteren aileler hâlinde çalış. Aşağıdaki tablolar V1 ve V2 biçimlerini birlikte gösterir.', example: 'Ravi bought a book, taught a class and gave it to a friend.' }
-      ],
-      tables: [
-        { title: 'The -ought / -aught family', intro: 'Similar endings make recall easier.', columns: ['V1', 'V2', 'Example'], rows: [
-          ['buy', 'bought', 'Mira bought a biography.'],
-          ['think', 'thought', 'Owen thought about the question.'],
-          ['teach', 'taught', 'Lea taught music for two years.'],
-          ['bring', 'brought', 'Kai brought an old photograph.']
-        ]},
-        { title: 'Vowel-change families', intro: 'Notice the shared sound or spelling movement.', columns: ['Pattern', 'V1 → V2', 'Example'], rows: [
-          ['i → a', 'drink → drank', 'Rosa drank tea after dinner.'],
-          ['i → a', 'begin → began', 'The concert began at eight.'],
-          ['ee → e', 'meet → met', 'Tariq met the poet in 2019.'],
-          ['come → came', 'come → came', 'The visitors came early.'],
-          ['take → took', 'take → took', 'Nina took a photograph.']
-        ]},
-        { title: 'Common one-step changes', intro: 'Keep each V1–V2 pair together.', columns: ['V1', 'V2', 'Example'], rows: [
-          ['become', 'became', 'Luca became an architect.'],
-          ['give', 'gave', 'Amir gave a short speech.'],
-          ['know', 'knew', 'Zoe knew the answer.'],
-          ['say', 'said', 'Ben said goodbye.'],
-          ['see', 'saw', 'Marta saw the exhibition.'],
-          ['send', 'sent', 'Iris sent the invitation.'],
-          ['tell', 'told', 'Noah told a funny story.']
-        ]}
-      ]
+      title: 'Short Review: What We Have Covered So Far',
+      desc: 'Yeni bir dilbilgisi konusu yok. Daha önce çalıştığın yapıları kısa ve karışık sorularla hatırla.',
+      rules: []
     },
     grammarExercises: [
-      q('A small statue stood ___ the flowers.', ['between', 'among', 'under two', 'next'], 1),
-      q('The pharmacy is ___ the bank and the café.', ['among', 'between', 'inside three', 'above of'], 1),
-      q('Yesterday Mira ___ a book about a famous poet.', ['buy', 'buys', 'bought', 'buyed'], 2),
-      q('The teacher ___ us about the emperor.', ['tell', 'tells', 'told', 'telled'], 2),
-      q('Ravi ___ a new idea during the meeting.', ['think', 'thought', 'thinked', 'thinking'], 1),
-      q('The concert ___ at eight last night.', ['begin', 'began', 'begun', 'begined'], 1),
-      q('Lea ___ music before she became a manager.', ['teach', 'taught', 'teached', 'teaches'], 1),
-      q('We ___ the architect at an exhibition.', ['meet', 'met', 'meeted', 'meeting'], 1),
-      q('Which sentence is correct?', ['Nina take a photograph yesterday.', 'Nina took a photograph yesterday.', 'Nina taked a photograph yesterday.', 'Nina takes a photograph yesterday.'], 1),
-      q('Omar ___ the invitation on Friday.', ['send', 'sent', 'sended', 'sends'], 1),
-      q('The young artist ___ famous after the exhibition.', ['become', 'became', 'becomed', 'becomes'], 1),
-      q('The child sat ___ a group of adults.', ['between', 'among', 'next of', 'behind of'], 1),
-      q('Choose the regular past form.', ['studied', 'studyed', 'study', 'studies yesterday'], 0),
-      q('The guide ___ us an old palace.', ['showed', 'show', 'shown', 'showd'], 0),
-      q('Which pair belongs to the same -ought/-aught family?', ['buy–bought and teach–taught', 'meet–met and see–saw', 'give–gave and send–sent', 'come–came and know–knew'], 0)
+      q('Mina usually ___ from home, but today she is working at the library.', ['work', 'works', 'is work', 'worked now'], 1),
+      q('Listen! The neighbours ___ a party.', ['have', 'has', 'are having', 'had every week'], 2),
+      q('We ___ visit the new exhibition next Saturday; the tickets are already booked.', ['are going to', 'went to', 'visit usually', 'have to yesterday'], 0),
+      q('I think electric cars ___ become more common.', ['will', 'are yesterday', 'did', 'have'], 0),
+      q('You look tired. You ___ take a short break.', ['should', 'must not', 'are', 'did'], 0),
+      q('Visitors ___ touch the paintings in the museum.', ['could', 'must not', 'are going', 'enjoy'], 1),
+      q('I saw ___ interesting documentary. ___ documentary was about city life.', ['a / A', 'an / The', 'the / An', 'some / A'], 1),
+      q('There is only ___ milk left, but there are ___ apples.', ['a few / a little', 'many / much', 'a little / a few', 'an / some'], 2),
+      q('If the weather is good, we ___ in the park.', ['walked yesterday', 'will walk', 'are walk', 'walking'], 1),
+      q('Rosa enjoys ___ photographs when she travels.', ['take', 'taking', 'takes', 'to taking'], 1),
+      q('The team hopes ___ the first prototype next month.', ['finish', 'finishing to', 'to finish', 'finished'], 2),
+      q('The guide spoke ___, so everyone understood the instructions.', ['clear', 'clearly', 'clearness', 'more clear yesterday'], 1),
+      q('Which sentence is correct?', ['This box is too heavy to carry.', 'This box is enough heavy to carry.', 'This is so heavy box.', 'This box too heavy carry.'], 0),
+      q('There ___ two comfortable chairs next to the window.', ['is', 'are', 'has', 'be'], 1),
+      q('Which question is correct?', ['What you will do if it rains?', 'What will you do if it rains?', 'What do you will if it rains?', 'What will do you if rain?'], 1)
     ],
     vocabExercises: [
       q('Who writes poems?', ['creator', 'poet', 'emperor', 'engineer'], 1),
@@ -281,16 +253,16 @@ export const NOVEMBER_CURRICULUM = {
       q('Among normally places something inside a group of ___.', ['three or more', 'exactly two only', 'no people or things', 'one object'], 0)
     ],
     test: [
-      q('They ___ the famous creator in 2020.', ['meet', 'met', 'meeted', 'meeting'], 1),
-      q('A bench stood ___ the trees.', ['between two', 'among', 'on of', 'next'], 1),
-      q('The poet ___ three letters yesterday.', ['send', 'sent', 'sended', 'sends'], 1),
-      q('Which is the past of buy?', ['buyed', 'bought', 'brought', 'buys'], 1),
-      q('Ada ___ an architect after university.', ['become', 'became', 'becomed', 'becomes'], 1),
-      q('Which is a regular past form?', ['worked', 'workt', 'wrought', 'works yesterday'], 0),
-      q('The guide ___ us the truth.', ['tell', 'told', 'telled', 'tells yesterday'], 1),
-      q('Use between when the relationship is mainly ___.', ['inside a large group', 'with two people or things', 'in the past', 'about quantity'], 1),
-      q('Which pair is correct?', ['teach–taught', 'teach–teached', 'teach–thought', 'teach–teach'], 0),
-      q('Mira ___ the sculpture at the museum.', ['saw', 'seed', 'see', 'seen yesterday'], 0)
+      q('Nora ___ coffee every morning.', ['drink', 'drinks', 'is drink', 'drank every day'], 1),
+      q('They ___ dinner right now.', ['cook', 'cooks', 'are cooking', 'cooked usually'], 2),
+      q('We have tickets, so we ___ the concert on Friday.', ['are going to attend', 'attended now', 'attend yesterday', 'have attended every Friday'], 0),
+      q('You ___ wear a seat belt in a car.', ['have to', 'might to', 'enjoy', 'are yesterday'], 0),
+      q('I bought ___ umbrella because it was raining.', ['a', 'an', 'the first mention', 'many'], 1),
+      q('How ___ water do we need?', ['many', 'much', 'a few', 'an'], 1),
+      q('If the shop is open, I ___ some bread.', ['bought', 'will buy', 'buying', 'will bought'], 1),
+      q('Leo is interested in ___ a language course.', ['join', 'joining', 'joined to', 'joins'], 1),
+      q('The new machine works very ___.', ['quiet', 'quietly', 'quieter noun', 'quietness'], 1),
+      q('Which sentence is correct?', ['It was such a useful lesson.', 'It was so a useful lesson.', 'It was enough useful lesson.', 'It was too useful a lesson to mean very useful.'], 0)
     ]
   }
 };

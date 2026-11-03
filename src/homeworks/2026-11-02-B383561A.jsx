@@ -8,7 +8,7 @@ export default function Lesson20261102() {
       curriculum={NOVEMBER_CURRICULUM}
       readings={NOVEMBER_READINGS}
       listening={NOVEMBER_LISTENING}
-      lessonLabel="2 November 2026 · Cumulative review · New rules on Day 4"
+      lessonLabel="2 November 2026 · Short cumulative review · No new grammar"
     />
   );
 }

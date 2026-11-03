@@ -88,10 +88,9 @@ for(const day of [1,2,3,4]){
   validateAnswerBalance(`Current Day ${day} grammar`,dayData.grammarExercises);
   validateAnswerBalance(`Current Day ${day} vocabulary`,dayData.vocabExercises);
   validateAnswerBalance(`Current Day ${day} final test`,dayData.test);
-  if(day<4&&dayData.grammar.rules.length)errors.push(`Current Day ${day}: repeated grammar explanation found`);
-  if(day===4&&(!dayData.grammar.rules.length||!dayData.grammar.tables?.length))errors.push('Current Day 4: new-rule explanation or verb-family table is missing');
+  if(dayData.grammar.rules.length)errors.push(`Current Day ${day}: repeated or new grammar explanation found`);
   if(current.sections.find(section=>section.id===`day-${day}`)?.questionCount!==15)errors.push(`Current Day ${day}: public package question count is not 15`);
 }
 if(/\bSelin\b/.test(JSON.stringify({NOVEMBER_CURRICULUM,NOVEMBER_LISTENING,NOVEMBER_READINGS})))errors.push('Student name appears inside current learning material');
 if(errors.length){console.error(`Current revision validation failed:\n- ${errors.join('\n- ')}`);process.exit(1)}
-console.log('Validated four current days, 15 exercises per day, review-only Days 1–3, and new rules only on Day 4.');
+console.log('Validated four current days, 15 concise review exercises per day, and no new grammar.');
