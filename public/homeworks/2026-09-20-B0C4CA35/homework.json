@@ -1,0 +1,17 @@
+{
+  "id": "2026-09-20-B0C4CA35",
+  "date": "2026-09-20",
+  "dateLabel": "20 Sep 2026",
+  "title": "Special Progress-Test Grammar Review",
+  "subtitle": "A one-off four-day review with explanations and mixed practice across the main grammar system.",
+  "lessonNotes": "This historical package follows the lesson-specific instruction to explain all reviewed grammar before the next normal-format lesson.",
+  "policyVersion": "selin-four-day-retrieval-and-progression@1",
+  "templateContractVersion": "selin-four-day-interactive@1",
+  "assessmentPolicyVersion": "selin-section-and-daily-checks@1",
+  "sections": [
+    { "id": "day-1", "label": "Day 1", "title": "Preferences and Present Time", "questionCount": 15, "readingLevel": "A2+/early B1" },
+    { "id": "day-2", "label": "Day 2", "title": "Future Choices", "questionCount": 15, "readingLevel": "A2+/early B1" },
+    { "id": "day-3", "label": "Day 3", "title": "Advice, Permission and Obligation", "questionCount": 15, "readingLevel": "A2+/early B1" },
+    { "id": "day-4", "label": "Day 4", "title": "Articles and Intensifiers", "questionCount": 15, "readingLevel": "A2+/early B1" }
+  ]
+}

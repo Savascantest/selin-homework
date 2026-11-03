@@ -24,5 +24,5 @@ test('active component preserves four days, all learning tabs, and every prior l
   for (const label of ['Grammar', 'Flashcards', 'Vocab Exercises', 'Reading', 'Listening', 'Final Test']) {
     assert.match(shell, new RegExp(label));
   }
-  for (const date of ['2026-11-02', '2026-08-29', '2026-08-23']) assert.match(app, new RegExp(date));
+  for (const date of ['2026-11-02', '2026-09-27', '2026-09-20', '2026-08-29', '2026-08-23']) assert.match(app, new RegExp(date));
 });

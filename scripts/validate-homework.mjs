@@ -1,5 +1,6 @@
 import { LISTENING_TASKS, UPGRADED_READINGS } from '../src/homeworks/selin-levelled-content.js';
 import { NOVEMBER_CURRICULUM, NOVEMBER_LISTENING, NOVEMBER_READINGS } from '../src/homeworks/selin-2026-11-02-content.js';
+import { SEP20_CURRICULUM, SEP20_LISTENING, SEP20_READINGS, SEP27_CURRICULUM, SEP27_LISTENING, SEP27_READINGS } from '../src/homeworks/selin-september-archive-content.js';
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { assertPublicPackagePrivacy } from './lib/public-package-privacy.mjs';
@@ -41,6 +42,31 @@ function validateLevelledContent(label, listeningSet, readingSet) {
 }
 validateLevelledContent('29 Aug', LISTENING_TASKS, UPGRADED_READINGS);
 validateLevelledContent('2 Nov', NOVEMBER_LISTENING, NOVEMBER_READINGS);
+
+function validateArchiveLesson(label, curriculum, listeningSet, readingSet) {
+  for (const day of [1, 2, 3, 4]) {
+    const dayData = curriculum[day];
+    if (dayData.grammarExercises.length !== 15) errors.push(`${label} Day ${day}: expected 15 grammar questions`);
+    if (dayData.vocabExercises.length < 8) errors.push(`${label} Day ${day}: expected at least 8 vocabulary questions`);
+    if (dayData.test.length < 10) errors.push(`${label} Day ${day}: expected at least 10 final-test questions`);
+    validateAnswerBalance(`${label} Day ${day} grammar`, dayData.grammarExercises);
+    validateAnswerBalance(`${label} Day ${day} vocabulary`, dayData.vocabExercises);
+    validateAnswerBalance(`${label} Day ${day} final test`, dayData.test);
+    const listeningTask = listeningSet[day];
+    if (!listeningTask?.url?.startsWith('https://') || listeningTask.questions.length < 5) errors.push(`${label} Day ${day}: listening task is incomplete`);
+    const readings = readingSet[day] || [];
+    if (!readings.length) errors.push(`${label} Day ${day}: reading is missing`);
+    for (const item of readings) {
+      const wordCount = item.content.trim().split(/\s+/).length;
+      if (wordCount < 150) errors.push(`${label} Day ${day} / ${item.title}: reading is only ${wordCount} words`);
+      if (item.questions.length < 5) errors.push(`${label} Day ${day} / ${item.title}: reading questions are incomplete`);
+    }
+  }
+  if (/\bSelin\b/.test(JSON.stringify({ curriculum, listeningSet, readingSet }))) errors.push(`${label}: student name appears inside learning material`);
+}
+
+validateArchiveLesson('20 Sep', SEP20_CURRICULUM, SEP20_LISTENING, SEP20_READINGS);
+validateArchiveLesson('27 Sep', SEP27_CURRICULUM, SEP27_LISTENING, SEP27_READINGS);
 
 if (errors.length) {
   console.error(`Selin homework validation failed:\n- ${errors.join('\n- ')}`);

@@ -1,0 +1,17 @@
+{
+  "id": "2026-09-27-3F26ED00",
+  "date": "2026-09-27",
+  "dateLabel": "27 Sep 2026",
+  "title": "Progress-Test Preparation: Home, Family, Ecology and Innovation",
+  "subtitle": "Four focused review days combining topic vocabulary, grammar explanations, reading, listening and cumulative checks.",
+  "lessonNotes": "This historical package follows the lesson-specific progress-test preparation brief and keeps each topic in a separate day.",
+  "policyVersion": "selin-four-day-retrieval-and-progression@1",
+  "templateContractVersion": "selin-four-day-interactive@1",
+  "assessmentPolicyVersion": "selin-section-and-daily-checks@1",
+  "sections": [
+    { "id": "day-1", "label": "Day 1", "title": "Homes and First Conditional", "questionCount": 15, "readingLevel": "A2+/early B1" },
+    { "id": "day-2", "label": "Day 2", "title": "Family Plans and Infinitives", "questionCount": 15, "readingLevel": "A2+/early B1" },
+    { "id": "day-3", "label": "Day 3", "title": "Ecology and Predictions", "questionCount": 15, "readingLevel": "A2+/early B1" },
+    { "id": "day-4", "label": "Day 4", "title": "Innovation and Adverbs", "questionCount": 15, "readingLevel": "A2+/early B1" }
+  ]
+}
